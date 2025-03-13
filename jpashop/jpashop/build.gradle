@@ -35,10 +35,6 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
-	//JUnit4 추가
-	testImplementation("org.junit.vintage:junit-vintage-engine") {
-		exclude group: "org.hamcrest", module: "hamcrest-core"
-	}
 }
 
 tasks.named('test') {
@@ -46,5 +42,5 @@ tasks.named('test') {
 }
 
 test {
- 	useJUnitPlatform()
+ useJUnitPlatform()
 }
