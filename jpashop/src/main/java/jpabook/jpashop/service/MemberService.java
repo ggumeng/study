@@ -3,14 +3,14 @@ package jpabook.jpashop.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import jakarta.transaction.Transactional;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service
-@Transactional
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class MemberService {
 
@@ -22,6 +22,7 @@ public class MemberService {
      * @param member
      * @return
      */
+    @Transactional
     public Long join(Member member) {
         validateDuplicateMember(member); // 중복회원 검증
         memberRepository.save(member);
