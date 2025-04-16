@@ -8,4 +8,6 @@
 ## 📁 폴더 구조
 ```
 /jpashop  # JPA 강의
+/onebite-react # JavaScript & React 강의
+
 ```
